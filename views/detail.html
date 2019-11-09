@@ -1,0 +1,240 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>{{.detail.Title}}</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="calamus">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="calamus">
+    <meta property="og:description" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="calamus">
+    <meta name="twitter:description" content="">
+
+    <link rel="canonical" href=""
+    />
+    <link rel='stylesheet' id='style-css' href='../static/static/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='main-css' href='../static/static/css/main.css' type='text/css' media='' />
+    <link rel='stylesheet' id='animate-css' href='../static/static/css/animate.css' type='text/css' media='' />
+    <link rel='stylesheet' id='fancybox-css' href='../static/static/css/jquery.fancybox.min.css' type='text/css' media='screen'
+    />
+    <link rel='stylesheet' id='highlight-css' href='../static/static/css/highlight.css' type='text/css' media='screen' />
+    <link rel='stylesheet' id='alu-css' href='../static/static/css/style_1.css' type='text/css' media='all' />
+    <script type='text/javascript' src='../static/static/js/jquery.min.js'></script>
+    <script type='text/javascript' src='../static/static/js/swiper.jquery.min.js'></script>
+    <script type='text/javascript' src='../static/static/js/headroom.min.js'></script>
+    <script type='text/javascript' src='../static/static/js/index.js'></script>
+    <link rel="icon" href="../static/static/picture/hdimg_8f2b1709e0b0859c3d347ffeceb5b37215006698420.jpg"
+        sizes="32x32" />
+    <style type="text/css" title="dynamic-css" class="options-output">
+        body {
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: right top;
+            background-image: url('../static/static/images/2018061502450237.png');
+        }
+
+        .crumbs_shop {
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+            background-position: center center;
+            background-image: url('../static/static/images/crumbs_shop.jpg');
+        }
+
+        .crumbs_page {
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+            background-position: center center;
+            background-image: url('../static/static/images/crumbs_page.jpg');
+        }
+    </style>
+</head>
+
+
+<body class="post-template-default single single-post postid-246 single-format-standard">
+    <!--头部-->
+
+    {{template "detail_header.html" .}}
+  
+    <section class="container wrapper">
+        <section class="crumbs_wrap box triangle wow bounceInUp">
+            <!--画廊分类-->
+            <h3> {{.detail.Title}} </h3>
+            <header class="post-head">
+                    <div class="postinfo">
+                        <div class="left">
+                            <!--作者-->
+                            <span class="author">
+                                <a href="" title="{{.detail.Creater}}">
+                                    <img class="avatar" src="../static/static/picture/hdimg_8f2b1709e0b0859c3d347ffeceb5b37215006698420.jpg"
+                                        data-original=""
+                                        alt="{{.detail.Creater}}" />{{.detail.Creater}}</a>
+                            </span>
+                            <!--分类-->
+                            <span class="category">
+                                <a href="" rel="category tag">{{.detail.Category}}</a>
+                         
+                            </span>
+                            <!--时间-->
+                            <span class="date">{{.detail.CreateTime.Format "2006-01-02 15:04:05"}}</span>
+                        </div>
+                        <div class="right">
+                            <!--浏览量-->
+                            <!-- <span class="view">
+                                <i class="icon-eye"></i>98</span> -->
+                            <!--评论-->
+                            <span class="comment">
+                                <i class="icon-comment"></i>
+                                <a href="#respond">{{.talks_count}}</a>
+                            </span>
+                            <!--点赞-->
+                            <span title="请先浏览本文章，再确定是否点赞！" class="like">
+                                <i class="icon-thumbs-up"></i>
+                                <span class="count">{{.detail.LikeNum}}</span>
+                            </span>
+                        </div>
+                    </div>
+                </header>
+        </section>
+        <section class="content">
+            <section class="content-wrap">
+                <article class="entry box triangle wow bounceInUp">
+                    <div class="content-post">
+                            {{str2html .detail.Content}}
+                    </div>
+                    <!-- 分页 -->
+                    <section class="pagination">
+                    </section>
+                    <!-- 按钮 -->
+                    <section class="post-social">
+                        <!--文章点赞-->
+                        <div class="post-like">
+                            <a href="/like?id={{.detail.Id}}" data-post_id="246" title="喜欢该文章，请点赞！">
+                                <i class="icon-thumbs-up">点赞</i>(
+                                <span class="count">{{.detail.LikeNum}}</span>)</a>
+                        </div>
+                        <!--打赏-->
+                        <div class="rewards">
+
+                            <a class="btn" href="#pay" title="觉得文章有用请给作者打赏！">
+                                赏
+                            </a>
+                        </div>
+                        <div class="post-like">
+                            <a href="#" data-post_id="246" title="">
+                                <i class="icon-thumbs-up">评论</i>(
+                                    <span class="count">{{.detail.TalkNum}}</span>)
+                            </a>
+                        </div>
+                    </section>
+               
+                    <section class="post_declare">
+                        <h2>评论区：</h2>
+                        <div id="comments" class="box triangle wow bounceInUp">
+                            <div id="respond" class="comment-respond">
+                                
+                                {{range .talks}}
+                                    <h4>  {{.Name}}： </h4><p style="font-size: 10px"></p>{{.CreateTime.Format "2006-01-02 15:04:05"}}</p> 
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{.Talk}}
+                                    <hr>
+                                {{end}}
+                            </div>
+                        </div>
+
+                        <div id="comments" class="box triangle wow bounceInUp">
+                            <div id="respond" class="comment-respond">
+                                <h3 id="reply-title" class="comment-reply-title">发表评论
+                                </h3>
+                                <form action="/talk?id={{.detail.Id}}" method="post" id="commentform" class="comment-form">
+                                    <p class="comment-form-url">
+                                            <label for="url">昵称</label>
+                                            <input id="url" name="name" type="text" value="" size="30" maxlength="30" required='required'
+                                            />
+                                    </p>
+                                    <p class="comment-form-email">
+                                        <label for="email">评论
+                                        </label>
+                                        <input id="talk" name="talk" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes"
+                                            required='required' />
+                                    </p>
+                                    <p class="form-submit">
+                                        <input name="submit" type="submit" id="submit" class="submit" value="发表评论" />
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <section class="related_posts box triangle wow bounceInUp">
+                            <!--标题-->
+                            <section class="home_title">
+                                <h3>最新文章</h3>
+                            </section>
+                            <ul class="layout_ul">
+           
+                                {{range .blogs}}
+                                <li class="layout_li">
+                                
+                                    <article class="postgrid">
+                                        <figure>
+                                            <a href="/detail?id={{.Id}}"  target="_blank">
+                                                <img class="thumb" src="{{.Img}}" style="width: 3580px;height: 202px "/> </a>
+                                        </figure>
+                                        <h2>
+                                            <a href="/detail?id={{.Id}}" target="_blank">{{.Title}}</a>
+                                        </h2>
+                                        <div class="homeinfo">
+                                            <!--分类-->
+                                            <span class="category">
+                                                <a href="" rel="category tag">{{.Category}}</a>,
+                                              
+                                            </span>
+                                            <!--时间-->
+                                            <span class="date">{{.CreateTime.Format "2006-01-02 15:04:05"}}</span>
+                               
+                                        </div>
+                                    </article>
+                                
+                                </li>
+                                {{end}}
+
+
+                            </ul>
+                        </section>
+
+
+
+                    </section>
+
+            </section>
+        </section>
+
+
+        <script type='text/javascript' src='../static/static/js/post-like.js'></script>
+        <script type='text/javascript' src='../static/static/js/wow.min.js'></script>
+        <script type='text/javascript' src='../static/static/js/jquery-ias.min.js'></script>
+        <script type='text/javascript' src='../static/static/js/jquery.scrollchaser.min.js'></script>
+        <script type='text/javascript' src='../static/static/js/jquery.lazyload.min.js'></script>
+        <script type='text/javascript' src='../static/static/js/jquery.fancybox.min.js'></script>
+        <script type='text/javascript' src='../static/static/js/gb2big5.js'></script>
+        <script type='text/javascript' src='../static/static/js/custom.js'></script>
+        <script type='text/javascript' src='../static/static/js/comment-ajax.js'></script>
+        <script type='text/javascript' src='../static/static/js/wp-embed.min.js'></script>
+</body>
+
+</html>
