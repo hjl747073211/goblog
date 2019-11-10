@@ -13,6 +13,8 @@ func init() {
     beego.InsertFilter("/pic", beego.BeforeRouter,FilterFunc)
     beego.InsertFilter("/category", beego.BeforeRouter,FilterFunc)
     beego.InsertFilter("/blog", beego.BeforeRouter,FilterFunc)
+
+    
     beego.Router("/", &controllers.MainController{})
     beego.Router("/login", &controllers.MainController{},"get:ShowLogin;post:DoLogin")
     beego.Router("/admin", &controllers.MainController{},"get:ShowAdminIndex")
