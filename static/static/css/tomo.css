@@ -1,0 +1,447 @@
+﻿@-webkit-keyframes glow {
+    0% {
+        -webkit-box-shadow: 0 0 12px rgba(72, 106, 170, 0.5);
+        border-color: rgba(160, 179, 214, 0.5);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 12px rgba(72, 106, 170, 1.0), 0 0 18px rgba(0, 140, 255, 1.0);
+        border-color: rgba(160, 179, 214, 1.0);
+    }
+}
+
+@keyframes shake-right {
+    2% {
+        transform: translate(0.5px, -1.5px) rotate(-0.5deg);
+    }
+    4% {
+        transform: translate(0.5px, 1.5px) rotate(1.5deg);
+    }
+    6% {
+        transform: translate(1.5px, 1.5px) rotate(1.5deg);
+    }
+    8% {
+        transform: translate(2.5px, 1.5px) rotate(0.5deg);
+    }
+    10% {
+        transform: translate(0.5px, 2.5px) rotate(0.5deg);
+    }
+    12% {
+        transform: translate(1.5px, 1.5px) rotate(0.5deg);
+    }
+    14% {
+        transform: translate(0.5px, 0.5px) rotate(0.5deg);
+    }
+    16% {
+        transform: translate(-1.5px, -0.5px) rotate(1.5deg);
+    }
+    18% {
+        transform: translate(0.5px, 0.5px) rotate(1.5deg);
+    }
+    20% {
+        transform: translate(2.5px, 2.5px) rotate(1.5deg);
+    }
+    22% {
+        transform: translate(0.5px, -1.5px) rotate(1.5deg);
+    }
+    24% {
+        transform: translate(-1.5px, 1.5px) rotate(-0.5deg);
+    }
+    26% {
+        transform: translate(1.5px, 0.5px) rotate(1.5deg);
+    }
+    28% {
+        transform: translate(-0.5px, -0.5px) rotate(-0.5deg);
+    }
+    30% {
+        transform: translate(1.5px, -0.5px) rotate(-0.5deg);
+    }
+    32% {
+        transform: translate(2.5px, -1.5px) rotate(1.5deg);
+    }
+    34% {
+        transform: translate(2.5px, 2.5px) rotate(-0.5deg);
+    }
+    36% {
+        transform: translate(0.5px, -1.5px) rotate(0.5deg);
+    }
+    38% {
+        transform: translate(2.5px, -0.5px) rotate(-0.5deg);
+    }
+    40% {
+        transform: translate(-0.5px, 2.5px) rotate(0.5deg);
+    }
+    42% {
+        transform: translate(-1.5px, 2.5px) rotate(0.5deg);
+    }
+    44% {
+        transform: translate(-1.5px, 1.5px) rotate(0.5deg);
+    }
+    46% {
+        transform: translate(1.5px, -0.5px) rotate(-0.5deg);
+    }
+    48% {
+        transform: translate(2.5px, -0.5px) rotate(0.5deg);
+    }
+    50% {
+        transform: translate(-1.5px, 1.5px) rotate(0.5deg);
+    }
+    52% {
+        transform: translate(-0.5px, 1.5px) rotate(0.5deg);
+    }
+    54% {
+        transform: translate(-1.5px, 1.5px) rotate(0.5deg);
+    }
+    56% {
+        transform: translate(0.5px, 2.5px) rotate(1.5deg);
+    }
+    58% {
+        transform: translate(2.5px, 2.5px) rotate(0.5deg);
+    }
+    60% {
+        transform: translate(2.5px, -1.5px) rotate(1.5deg);
+    }
+    62% {
+        transform: translate(-1.5px, 0.5px) rotate(1.5deg);
+    }
+    64% {
+        transform: translate(-1.5px, 1.5px) rotate(1.5deg);
+    }
+    66% {
+        transform: translate(0.5px, 2.5px) rotate(1.5deg);
+    }
+    68% {
+        transform: translate(2.5px, -1.5px) rotate(1.5deg);
+    }
+    70% {
+        transform: translate(2.5px, 2.5px) rotate(0.5deg);
+    }
+    72% {
+        transform: translate(-0.5px, -1.5px) rotate(1.5deg);
+    }
+    74% {
+        transform: translate(-1.5px, 2.5px) rotate(1.5deg);
+    }
+    76% {
+        transform: translate(-1.5px, 2.5px) rotate(1.5deg);
+    }
+    78% {
+        transform: translate(-1.5px, 2.5px) rotate(0.5deg);
+    }
+    80% {
+        transform: translate(-1.5px, 0.5px) rotate(-0.5deg);
+    }
+    82% {
+        transform: translate(-1.5px, 0.5px) rotate(-0.5deg);
+    }
+    84% {
+        transform: translate(-0.5px, 0.5px) rotate(1.5deg);
+    }
+    86% {
+        transform: translate(2.5px, 1.5px) rotate(0.5deg);
+    }
+    88% {
+        transform: translate(-1.5px, 0.5px) rotate(1.5deg);
+    }
+    90% {
+        transform: translate(-1.5px, -0.5px) rotate(-0.5deg);
+    }
+    92% {
+        transform: translate(-1.5px, -1.5px) rotate(1.5deg);
+    }
+    94% {
+        transform: translate(0.5px, 0.5px) rotate(-0.5deg);
+    }
+    96% {
+        transform: translate(2.5px, -0.5px) rotate(-0.5deg);
+    }
+    98% {
+        transform: translate(-1.5px, -1.5px) rotate(-0.5deg);
+    }
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0);
+    }
+}
+
+@keyframes shake-left {
+    2% {
+        transform: translate(0.5px, -1.5px) rotate(0.5deg);
+    }
+    4% {
+        transform: translate(0.5px, 1.5px) rotate(1.5deg);
+    }
+    6% {
+        transform: translate(1.5px, 1.5px) rotate(1.5deg);
+    }
+    8% {
+        transform: translate(2.5px, 1.5px) rotate(-0.5deg);
+    }
+    10% {
+        transform: translate(0.5px, 2.5px) rotate(-0.5deg);
+    }
+    12% {
+        transform: translate(1.5px, 1.5px) rotate(-0.5deg);
+    }
+    14% {
+        transform: translate(0.5px, 0.5px) rotate(-0.5deg);
+    }
+    16% {
+        transform: translate(-1.5px, -0.5px) rotate(1.5deg);
+    }
+    18% {
+        transform: translate(0.5px, 0.5px) rotate(1.5deg);
+    }
+    20% {
+        transform: translate(2.5px, 2.5px) rotate(1.5deg);
+    }
+    22% {
+        transform: translate(0.5px, -1.5px) rotate(1.5deg);
+    }
+    24% {
+        transform: translate(-1.5px, 1.5px) rotate(0.5deg);
+    }
+    26% {
+        transform: translate(1.5px, 0.5px) rotate(1.5deg);
+    }
+    28% {
+        transform: translate(-0.5px, -0.5px) rotate(0.5deg);
+    }
+    30% {
+        transform: translate(1.5px, -0.5px) rotate(0.5deg);
+    }
+    32% {
+        transform: translate(2.5px, -1.5px) rotate(1.5deg);
+    }
+    34% {
+        transform: translate(2.5px, 2.5px) rotate(0.5deg);
+    }
+    36% {
+        transform: translate(0.5px, -1.5px) rotate(-0.5deg);
+    }
+    38% {
+        transform: translate(2.5px, -0.5px) rotate(0.5deg);
+    }
+    40% {
+        transform: translate(-0.5px, 2.5px) rotate(-0.5deg);
+    }
+    42% {
+        transform: translate(-1.5px, 2.5px) rotate(-0.5deg);
+    }
+    44% {
+        transform: translate(-1.5px, 1.5px) rotate(-0.5deg);
+    }
+    46% {
+        transform: translate(1.5px, -0.5px) rotate(0.5deg);
+    }
+    48% {
+        transform: translate(2.5px, -0.5px) rotate(-0.5deg);
+    }
+    50% {
+        transform: translate(-1.5px, 1.5px) rotate(-0.5deg);
+    }
+    52% {
+        transform: translate(-0.5px, 1.5px) rotate(-0.5deg);
+    }
+    54% {
+        transform: translate(-1.5px, 1.5px) rotate(-0.5deg);
+    }
+    56% {
+        transform: translate(0.5px, 2.5px) rotate(1.5deg);
+    }
+    58% {
+        transform: translate(2.5px, 2.5px) rotate(-0.5deg);
+    }
+    60% {
+        transform: translate(2.5px, -1.5px) rotate(1.5deg);
+    }
+    62% {
+        transform: translate(-1.5px, 0.5px) rotate(1.5deg);
+    }
+    64% {
+        transform: translate(-1.5px, 1.5px) rotate(1.5deg);
+    }
+    66% {
+        transform: translate(0.5px, 2.5px) rotate(1.5deg);
+    }
+    68% {
+        transform: translate(2.5px, -1.5px) rotate(1.5deg);
+    }
+    70% {
+        transform: translate(2.5px, 2.5px) rotate(-0.5deg);
+    }
+    72% {
+        transform: translate(-0.5px, -1.5px) rotate(1.5deg);
+    }
+    74% {
+        transform: translate(-1.5px, 2.5px) rotate(1.5deg);
+    }
+    76% {
+        transform: translate(-1.5px, 2.5px) rotate(1.5deg);
+    }
+    78% {
+        transform: translate(-1.5px, 2.5px) rotate(-0.5deg);
+    }
+    80% {
+        transform: translate(-1.5px, 0.5px) rotate(0.5deg);
+    }
+    82% {
+        transform: translate(-1.5px, 0.5px) rotate(0.5deg);
+    }
+    84% {
+        transform: translate(-0.5px, 0.5px) rotate(1.5deg);
+    }
+    86% {
+        transform: translate(2.5px, 1.5px) rotate(-0.5deg);
+    }
+    88% {
+        transform: translate(-1.5px, 0.5px) rotate(1.5deg);
+    }
+    90% {
+        transform: translate(-1.5px, -0.5px) rotate(0.5deg);
+    }
+    92% {
+        transform: translate(-1.5px, -1.5px) rotate(1.5deg);
+    }
+    94% {
+        transform: translate(0.5px, 0.5px) rotate(0.5deg);
+    }
+    96% {
+        transform: translate(2.5px, -0.5px) rotate(0.5deg);
+    }
+    98% {
+        transform: translate(-1.5px, -1.5px) rotate(0.5deg);
+    }
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0);
+    }
+}
+
+.cl-tomo-body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-image: url(../images/2018061902433785.png);
+}
+
+.cl-tomo-title {
+    width: 100%;
+    text-align: center;
+}
+
+.cl-tomo-container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cl-tomo-list {
+    border-radius: 10px;
+    display: flex;
+    padding: 5px;
+    width: 280px;
+    height: 134px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #e1244e9e;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 15px 2px #e1244e9e;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    color: #e1244e;
+    overflow: hidden;
+    animation-delay: 5s;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.cl-tomo-list:nth-child(even) {
+    animation-name: shake-right;
+}
+
+.cl-tomo-list:nth-child(odd) {
+    animation-name: shake-left;
+}
+
+.cl-tomo-list:hover {
+    box-shadow: 0 3px 15px 4px #e1244e9e
+}
+
+.cl-tomo-avatar {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50%;
+    display: block;
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    transition: all .8s ease;
+}
+
+.cl-tomo-avatar:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+}
+
+.cl-tomo-content {
+    padding: 10px;
+}
+
+.cl-tomo-content .cl-tomo-content-name {
+    font-size: 14px;
+    font-weight: bold;
+    font-weight: bold;
+    text-shadow: 5px 2px 6px #e1244e91;
+}
+
+.cl-tomo-content .cl-tomo-content-des {
+    color: #999 !important;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.cl-tomo-invitation {
+    display: block;
+    margin-top: 100px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: white !important;
+    background: #e1244e91 !important;
+    box-shadow: 0 3px 15px 2px white;
+    border-radius: 10px;
+}
+
+.cl-tomo-invitation:hover {
+    background: #e1244e !important;
+}
+
+
+/* 加入我的后宫 */
+
+.cl-invitation-body {
+    padding: 5px;
+    min-height: 134px;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #e1244e9e;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 3px 15px 2px #e1244e9e;
+    font-size: 12px;
+    text-overflow: ellipsis;
+}
+
+.cl-content-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 5px 2px 6px #e1244e91;
+    color: #e1244e;
+}
