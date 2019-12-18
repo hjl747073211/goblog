@@ -30,10 +30,12 @@ func (c *MainController) Logout() {
 	c.TplName = "login.html"
 }
 
+//登录页
 func (c *MainController) ShowLogin() {
 		c.TplName = "login.html"
 }
 
+//登录操作
 func (c *MainController) DoLogin() {
 	userName:=c.GetString("username")
 	pwd:=c.GetString("password")
@@ -68,10 +70,12 @@ func (c *MainController) DoLogin() {
 
 }
 
+//显示后台首页
 func (c *MainController) ShowAdminIndex() {
 	c.TplName = "admin_index.html"
 }
 
+//显示文章分类
 func (c *MainController) ShowCategory() {
 	o:=orm.NewOrm()
 	var categories []models.Category
@@ -85,10 +89,12 @@ func (c *MainController) ShowCategory() {
 	c.TplName = "admin_category.html"
 }
 
+//显示文章分类添加页
 func (c *MainController) ShowCategoryAdd() {
 	c.TplName = "admin_category_add.html"
 }
 
+//分类添加
 func (c *MainController) DoCategoryAdd() {
 	category:=c.GetString("category")
 	remark:=c.GetString("remark")
@@ -114,6 +120,7 @@ func (c *MainController) DoCategoryAdd() {
 
 }
 
+//显示封面图
 func (c *MainController) ShowPic() {
 	var images []models.Image
 
@@ -145,10 +152,12 @@ func (c *MainController) ShowPic() {
 	c.TplName = "admin_big_pic.html"
 }
 
+//封面图添加页
 func (c *MainController) ShowPicAdd() {
 	c.TplName = "admin_big_pic_add.html"
 }
 
+//封面图上传添加
 func (c *MainController) DoPicAdd() {
 	title:=c.GetString("title")
 	content:=c.GetString("content")
@@ -197,7 +206,7 @@ func (c *MainController) DoPicAdd() {
 		return 
 	}
 
-	
+	//将最新的封面数据存入redis
 	var images []models.Image
 	//查询image表的所有数据，放在images里边
 	_,err=o.QueryTable("Image").All(&images)
@@ -218,6 +227,7 @@ func (c *MainController) DoPicAdd() {
 
 }
 
+//显示前台首页
 func (c *MainController) ShowIndex() {
 	o:=orm.NewOrm()
 	var blogs []models.Blog
@@ -255,7 +265,7 @@ func (c *MainController) ShowIndex() {
 
 
 
-	//使用QueryBuilder查询
+	//使用QueryBuilder查询，最新评论
 	qb,_:=orm.NewQueryBuilder("mysql")
 	qb.Select("*").From("talk").OrderBy("id").Desc().Limit(5)
 	sql:=qb.String()
@@ -282,7 +292,7 @@ func (c *MainController) ShowIndex() {
 	c.TplName = "index.html"
 }
 
-
+//显示添加博客页
 func (c *MainController) ShowAddBlog() {
 	o:=orm.NewOrm()
 	var categories []models.Category
@@ -295,6 +305,8 @@ func (c *MainController) ShowAddBlog() {
 	c.TplName = "admin_blog_add.html"
 }
 
+
+//添加博客
 func (c *MainController) DoAddBlog() {
 	title:=c.GetString("title")
 	creater:=c.GetString("creater")
@@ -353,6 +365,7 @@ func (c *MainController) DoAddBlog() {
 	c.Redirect("/bloglist",302)
 }
 
+//博客列表页
 func (c *MainController) ShowBlog() {
 	o:=orm.NewOrm()
 	var blogs []models.Blog
@@ -368,7 +381,7 @@ func (c *MainController) ShowBlog() {
 	c.TplName = "admin_blog.html"
 }
 
-
+//详情页
 func (c *MainController) ShowDetail() {
 	//文章内容
 	id,err:=c.GetInt("id")
@@ -403,7 +416,7 @@ func (c *MainController) ShowDetail() {
 	c.Data["blogs"]=blogs
 
 
-	//评论内容
+	//评论内容展示
 	var talks []models.Talk
 	//使用QueryBuilder查询
 	qb2,err:=orm.NewQueryBuilder("mysql")
@@ -416,7 +429,7 @@ func (c *MainController) ShowDetail() {
 	c.TplName = "detail.html"
 }
 
-
+//读者评论
 func (c *MainController) DoAddTalk() {
 	id,err:=c.GetInt("id")
 	if err!=nil{
@@ -454,7 +467,7 @@ func (c *MainController) DoAddTalk() {
 	c.Redirect("/detail?id="+strconv.Itoa(id),302)
 }
 
-
+//点赞
 func (c *MainController) DoAddLike() {
 	id,err:=c.GetInt("id")
 	if err!=nil{
@@ -479,7 +492,7 @@ func (c *MainController) DoAddLike() {
 	c.Redirect("/detail?id="+strconv.Itoa(id),302)
 }
 
-
+//更新博客页
 func (c *MainController) ShowBlogEdit() {
 	id,err:=c.GetInt("id")
 	if err!=nil{
@@ -509,6 +522,7 @@ func (c *MainController) ShowBlogEdit() {
 	c.TplName = "admin_blog_edit.html"
 }
 
+//更新博客
 func (c *MainController) DoEdit() {
 
 	title:=c.GetString("title")
@@ -584,7 +598,7 @@ func (c *MainController) DoEdit() {
 }
 
 
-
+//删除博客
 func (c *MainController) DoDel() {
 	id,id_err:=c.GetInt("id")
 	if id_err!=nil{

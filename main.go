@@ -11,6 +11,7 @@ func main() {
 	beego.Run()
 }
 
+//分页
 func DoPrevPage(data int)(int){
 	pageIndex:=data-1
 	return pageIndex

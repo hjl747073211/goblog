@@ -5,27 +5,22 @@ import(
 	"time"
 )
 
+//用户
 type User struct{
 	Id int
 	Name string `orm:"unique"`
 	Pwd string
 }
 
-type Article struct {
-	Id int
-	Aname string `orm:"size(20)"`  //设置长度
-	Atime time.Time
-	Account int `orm:"default(0)"` //设置默认值
-	Acontent string
-	Aimg string
-}
 
+//分类
 type Category struct {
 	Id int
 	Category string
 	Remark string
 }
 
+//封面图
 type Image struct {
 	Id int 
 	Image string
@@ -34,6 +29,7 @@ type Image struct {
 	UpdateTime time.Time `orm:"auto_now"`
 }
 
+//博客
 type Blog struct {
 	Id int
 	Img string
@@ -49,6 +45,7 @@ type Blog struct {
 	LikeNum int
 }
 
+//评论
 type Talk struct {
 	Id int 
 	Name string
