@@ -23,24 +23,15 @@ func (c *MainController) Get() {
 	c.TplName = "login.html"
 }
 
+//退出登录
 func (c *MainController) Logout() {
+	//清除session
 	c.DelSession("goblog_user") 
 	c.TplName = "login.html"
 }
 
 func (c *MainController) ShowLogin() {
-	//获取cookie
-	// name:=c.Ctx.GetCookie("goblog_user")
-	//获取session
-	// name:=c.GetSession("goblog_user")
-	// beego.Info(name)
-	// if name!="" && name!=nil{
-	// 	c.Data["goblog_user"]=name
-	// 	c.TplName = "admin_index.html"
-	// }else{
 		c.TplName = "login.html"
-	// }
-
 }
 
 func (c *MainController) DoLogin() {
@@ -199,8 +190,8 @@ func (c *MainController) DoPicAdd() {
 	img.Image=imagePath
 	img.Title=title
 	img.Content=content
-	_ ,errInsert := o.Insert(&img)
-	if errInsert!=nil{
+	_ ,err = o.Insert(&img)
+	if err!=nil{
 		beego.Info("插入失败")
 		c.Redirect("/picadd",302)
 		return 
@@ -209,8 +200,8 @@ func (c *MainController) DoPicAdd() {
 	
 	var images []models.Image
 	//查询image表的所有数据，放在images里边
-	_,errSel:=o.QueryTable("Image").All(&images)
-	if errSel!=nil{
+	_,err=o.QueryTable("Image").All(&images)
+	if err!=nil{
 		beego.Info("select err")
 		return 
 	}

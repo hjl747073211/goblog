@@ -57,6 +57,8 @@ type Talk struct {
 	BlogId int
 }
 
+
+
 func init(){
 	//设置数据库基本信息,default一般不用,test是库名
 	orm.RegisterDataBase("default","mysql","root:root@tcp(127.0.0.1:3306)/test?charset=utf8&loc=Local")
