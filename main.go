@@ -6,6 +6,7 @@ import (
 )
 
 
+
 func main() {
 	beego.AddFuncMap("prevpage",DoPrevPage)
 	beego.AddFuncMap("nextpage",DoNextPage)
