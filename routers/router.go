@@ -6,7 +6,7 @@ import (
 	"github.com/astaxie/beego/context"
 	
 )
-//注释
+
 func init() {
 	//这里可以匹配路由，在前边判断是否有session
     beego.InsertFilter("/admin", beego.BeforeRouter,FilterFunc)
