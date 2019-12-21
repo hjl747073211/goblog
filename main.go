@@ -5,6 +5,7 @@ import (
 	"github.com/astaxie/beego"
 )
 
+
 func main() {
 	beego.AddFuncMap("prevpage",DoPrevPage)
 	beego.AddFuncMap("nextpage",DoNextPage)
